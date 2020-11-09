@@ -19,7 +19,17 @@ const PostGrid = ({ posts }) => {
   return (
     <Grid role="list" columns={2}>
       {currentList.map((data) => {
-        const { id, slug, title, desc, date, category, thumbnail, alt } = data;
+        const {
+          id,
+          slug,
+          title,
+          desc,
+          excerpt,
+          date,
+          category,
+          thumbnail,
+          alt,
+        } = data;
         const korDate = convertToKorDate(date);
         const ariaLabel = `${title} - ${category} - Posted on ${korDate}`;
         return (
@@ -39,6 +49,7 @@ const PostGrid = ({ posts }) => {
                 alt={alt}
                 category={category}
                 title={title}
+                excerpt={excerpt}
                 desc={desc}
                 date={date}
                 korDate={korDate}

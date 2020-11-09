@@ -15,6 +15,7 @@ const usePosts = (data, pageContext) => {
     filteredPostData.forEach(({ node }) => {
       const {
         id,
+        excerpt,
         fields: { slug },
         frontmatter: {
           title,
@@ -33,6 +34,7 @@ const usePosts = (data, pageContext) => {
           slug,
           title,
           desc,
+          excerpt,
           date,
           category,
           thumbnail: childImageSharp.id,
